@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOODProject", "MyOODProject\MyOODProject.csproj", "{CBA526C3-41DE-49D7-B37A-F7C139BD09A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "..\DataManagement\DataManagement.csproj", "{6FC69DCE-00C1-471D-B9D0-5069AEDA815B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CBA526C3-41DE-49D7-B37A-F7C139BD09A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBA526C3-41DE-49D7-B37A-F7C139BD09A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA526C3-41DE-49D7-B37A-F7C139BD09A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC69DCE-00C1-471D-B9D0-5069AEDA815B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC69DCE-00C1-471D-B9D0-5069AEDA815B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC69DCE-00C1-471D-B9D0-5069AEDA815B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC69DCE-00C1-471D-B9D0-5069AEDA815B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

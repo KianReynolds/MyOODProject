@@ -7,76 +7,106 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
 
-using EntityFramework;
+//using EntityFramework;
 
 namespace MyOODProject
 {
-    public abstract class Shirts : IComparable
+    public /*abstract*/class Shirts //: IComparable
     {
         //properties
         public int ShirtsID { get; set; }
-        public string ShirtNames {  get; set; }
+        public string Name { get; set; }
         public string Info { get; set; }
         public int YearFormed { get; set; }
-        public  List<Price> Prices{ get; set; }
+        public int PriceID {  get; set; }
+        public virtual Price Price { get; set; }
 
+    }
 
-        //constructors
-        public Shirts(string shirtNames, string info, int yearFormed)
+    public class Price
+    {
+        public int PriceID { get; set; }
+        public int TotalAmount { get; set; }
+        public virtual List<Shirts> Shirts { get; set; }
+
+        public Price()
         {
-            ShirtNames = shirtNames;
-            Info = info;
+            Shirts = new List<Shirts>();
+        }
+    }
+
+    public class MyDataBase : DbContext
+    {
+        public MyDataBase(string databaseName) : base(databaseName){ }
+        public DbSet<Shirts> Shirts {  set; get; }
+        public DbSet<Price> Prices { set; get; }
+
+        
+    }
+
+
+
+    //    //constructors
+    //    public Shirts(string shirtNames, string info, int yearFormed)
+    //    {
+    //        ShirtNames = shirtNames;
+    //        Info = info;
 
             
-            YearFormed = yearFormed;
-        }
-        public Shirts() 
-        {
+    //        YearFormed = yearFormed;
+    //    }
+    //    public Shirts() 
+    //    {
             
-        }
+    //    }
 
-        //methods
-        public override string ToString()
-        {
-            return ShirtNames;
-        }
+    //    //methods
+    //    public override string ToString()
+    //    {
+    //        return ShirtNames;
+    //    }
 
-        public int CompareTo(object obj)
-        {
-            Shirts othershirts = obj as Shirts;
-            return this.ShirtNames.CompareTo(othershirts.ShirtNames);
-        }
-    }
+    //    public int CompareTo(object obj)
+    //    {
+    //        Shirts othershirts = obj as Shirts;
+    //        return this.ShirtNames.CompareTo(othershirts.ShirtNames);
+    //    }
+    //}
 
-    public class Connachta : Shirts
-    {
-        public override string ToString()
-        {
-            return base.ToString(); 
-        }
-    }
-    public class Munster : Shirts
-    {
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-    }
-    public class Leinster : Shirts
-    {
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-    }
+    //public class Connachta : Shirts
+    //{
+    //    public override string ToString()
+    //    {
+    //        return base.ToString(); 
+    //    }
+    //}
+    //public class Munster : Shirts
+    //{
+    //    public override string ToString()
+    //    {
+    //        return base.ToString();
+    //    }
+    //}
+    //public class Leinster : Shirts
+    //{
+    //    public override string ToString()
+    //    {
+    //        return base.ToString();
+    //    }
+    //}
 
-    public class ShirtsData : DbContext
-    {
-        public ShirtsData()
-        {
-            public DBSet<Price> {get; set;}
 
-        }
-    }
+
+
+    //public class ShirtsData : DbContext
+    //{
+    //    public ShirtsData() { }
+        
+    //    public DBSet<Price> Price { get; set; }
+
+
+    //}
+
 }
+
 

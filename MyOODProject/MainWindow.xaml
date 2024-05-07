@@ -33,10 +33,11 @@
                 <ComboBox x:Name="cbxCounties" HorizontalAlignment="Left" Margin="132,68,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxCounties_SelectionChanged"/>
                 <Label Grid.Column="1" Content="County" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" IsEnabled="False"/>
                 <TextBlock x:Name="tblkDesc" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Height="106" Width="551" Grid.ColumnSpan="2"/>
-                <Button x:Name="btnCheckout" Grid.Column="2" Content="Button" HorizontalAlignment="Left" Margin="135,67,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Button_Click"/>
-                <Button x:Name="btnAdd" Grid.Column="2" Content="Button" HorizontalAlignment="Left" Margin="135,14,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-                <Button Grid.Column="2" Content="Button" HorizontalAlignment="Left" Margin="23,14,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Button x:Name="btnCheckout" Grid.Column="2" Content="Checkout" HorizontalAlignment="Left" Margin="135,67,0,0" Grid.Row="2" VerticalAlignment="Top" Click="Button_Click"/>
+                <Button x:Name="btnAdd" Grid.Column="2" Content="+" HorizontalAlignment="Left" Margin="135,14,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Button Grid.Column="2" Content="-" HorizontalAlignment="Left" Margin="54,14,0,0" Grid.Row="2" VerticalAlignment="Top"/>
                 <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="88,18,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="24" Height="16"/>
+                <Button Grid.Column="2" Content="Button" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="35" Width="217"/>
             </Grid>
         </TabItem>
         <TabItem Header="About Us">
