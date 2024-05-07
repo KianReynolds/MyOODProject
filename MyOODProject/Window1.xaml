@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterOwner">
         
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,66,448,92"/>
+        <ListBox x:Name="lbxItems"  d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,66,448,92"/>
 
     </Grid>
 </Window>

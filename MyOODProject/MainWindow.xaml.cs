@@ -32,19 +32,23 @@ namespace MyOODProject
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
+            
+            
+
+            
             MyDataBase DB = new MyDataBase();
 
             var query = from s in DB.Shirts
                         select s.Name;
 
-           var results = query.ToList();
+            var results = query.ToList();
 
             lbxShirts.ItemsSource = results;
 
 
             //populate combobox
-           // string[] county = { "All", "Connachta", "Munster", "Leinster" };
-           // cbxCounties.ItemsSource = county;        
+            // string[] county = { "All", "Connachta", "Munster", "Leinster" };
+            // cbxCounties.ItemsSource = county;        
 
             //Display Exact Date
             DateTime dateTime = DateTime.Today;

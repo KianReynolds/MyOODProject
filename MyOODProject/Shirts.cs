@@ -18,8 +18,12 @@ namespace MyOODProject
         public string Name { get; set; }
         public string Info { get; set; }
         public int YearFormed { get; set; }
-        public int PriceID {  get; set; }
-        public virtual Price Price { get; set; }
+
+        public virtual List<Price> Prices { get; set; }
+        public Shirts()
+        {
+            Price price = new Price();
+        }
 
     }
 
@@ -27,16 +31,23 @@ namespace MyOODProject
     {
         public int PriceID { get; set; }
         public int TotalAmount { get; set; }
-        public virtual List<Shirts> Shirts { get; set; }
 
-        public Price()
-        {
-            Shirts = new List<Shirts>();
-        }
+        public int ShirtsID { get; set; }
+        public virtual Shirts Shirts { get; set; }
+
+       
     }
+
+
+
+
 
     public class MyDataBase : DbContext
     {
+        public MyDataBase()
+        {
+        }
+
         public MyDataBase(string databaseName) : base(databaseName){ }
         public DbSet<Shirts> Shirts {  set; get; }
         public DbSet<Price> Prices { set; get; }
