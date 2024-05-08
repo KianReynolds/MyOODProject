@@ -19,40 +19,50 @@ namespace MyOODProject
         public string Info { get; set; }
         public int YearFormed { get; set; }
 
-        public virtual List<Price> Prices { get; set; }
-        public Shirts()
-        {
-            Price price = new Price();
-        }
+        //public Shirts()
+        //{
+        //    Price price = new Price();
+        //}
 
+        public int PriceID { get; set; }
+        public virtual Price Price { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} 22";
+        }
     }
 
     public class Price
     {
         public int PriceID { get; set; }
         public int TotalAmount { get; set; }
+        public string Size { get; set; }
+        public string Gender { get; set; }
+        
 
-        public int ShirtsID { get; set; }
-        public virtual Shirts Shirts { get; set; }
+        //public virtual List<Shirts> Shirts { get; set; }
+        
 
-       
+
     }
 
 
 
 
 
-    public class MyDataBase : DbContext
+    public class ShirtData : DbContext
     {
-        public MyDataBase()
-        {
-        }
 
-        public MyDataBase(string databaseName) : base(databaseName){ }
+        public ShirtData(string databaseName) : base(databaseName){ }
+        public ShirtData() : this("MyDataBase"){ }
         public DbSet<Shirts> Shirts {  set; get; }
         public DbSet<Price> Prices { set; get; }
 
-        
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=StoreDb;Trusted_Connection=True;");
+        //}
     }
 
 
@@ -109,14 +119,7 @@ namespace MyOODProject
 
 
 
-    //public class ShirtsData : DbContext
-    //{
-    //    public ShirtsData() { }
-        
-    //    public DBSet<Price> Price { get; set; }
-
-
-    //}
+   
 
 }
 

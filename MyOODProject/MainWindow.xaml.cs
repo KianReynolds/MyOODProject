@@ -23,6 +23,7 @@ namespace MyOODProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        ShirtData db = new ShirtData("MyDataBase");
 
         List<Shirts> allShirts = new List<Shirts>();
         public MainWindow()
@@ -32,11 +33,8 @@ namespace MyOODProject
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
-            
-            
 
-            
-            MyDataBase DB = new MyDataBase();
+            ShirtData DB = new ShirtData();
 
             var query = from s in DB.Shirts
                         select s.Name;
@@ -47,8 +45,8 @@ namespace MyOODProject
 
 
             //populate combobox
-            // string[] county = { "All", "Connachta", "Munster", "Leinster" };
-            // cbxCounties.ItemsSource = county;        
+             string[] county = { "All", "Connachta", "Munster", "Leinster" };
+            cbxCounties.ItemsSource = county;
 
             //Display Exact Date
             DateTime dateTime = DateTime.Today;
@@ -189,6 +187,14 @@ namespace MyOODProject
             Window1 secondWindow = new Window1();
             secondWindow.Show();
         }
+
+        //private void PopulateShirtsListBox()
+        //{
+        //    using (db)
+        //    {
+        //        lbxShirts.ItemsSource = db.Shirts.Include(s => s.Price).ToList();
+        //    }
+        //}
 
 
     }
